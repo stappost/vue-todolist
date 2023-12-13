@@ -16,3 +16,6 @@ main{
 .cursor_pointed{
     cursor: pointer;
 }
+.d_flex{
+    display: flex;
+}

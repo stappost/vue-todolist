@@ -29,7 +29,7 @@
                                 <button class="btn btn-sm btn-success" @click="filtro">Filtra</button>
                             </div>
                             <ul class="list-unstyled">
-                                <li  v-for="(todo, index) in todoList" v-show="todo.show" class="my-3 py-3 d-flex justify-content-between border-bottom border-black" :class="todo.done ? 'text-decoration-line-through' : ''" >
+                                <li  v-for="(todo, index) in todoList" v-show="todo.show" class="my-3 py-3 d_flex justify-content-between border-bottom border-black" :class="todo.done ? 'text-decoration-line-through' : ''" >
                                     <div>
                                         <div v-if="!todo.modify">
                                             <button class="btn btn-sm btn-rounded bg-danger" @click="todoList.splice(index,1)">&cross;</button>
