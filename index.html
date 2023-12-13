@@ -23,13 +23,19 @@
                             <ul class="list-unstyled">
                                 <li v-for="(todo, index) in todoList" class="my-3 py-3 d-flex justify-content-between border-bottom border-black" :class="todo.done ? 'text-decoration-line-through' : ''">
                                     <div>
-                                        <button class="btn btn-sm btn-rounded bg-danger" @click="todoList.splice(index,1)">&cross;</button>
-                                        <span @click="todo.done = !todo.done" class="cursor_pointed ms-3">
-
-                                            {{todo.text}}
-                                        </span>
+                                        <div v-if="!todo.modify">
+                                            <button class="btn btn-sm btn-rounded bg-danger" @click="todoList.splice(index,1)">&cross;</button>
+                                            <span @click="todo.done = !todo.done" class="cursor_pointed ms-3">
+                                                {{todo.text}}
+                                            </span>
+                                        </div>
+                                        <div v-else class="d-flex">
+                                            <input type="text" class="form-control" placeholder="modifica task" v-model="text_task" @keyup.enter="modify_task(todo)">
+                                            <button class="btn btn-sm btn-success" @click="modify_task(todo)" >Modifica</button>
+                                        </div>
                                     </div>
                                     <div class="buttons">
+                                        <button class="btn btn-sm btn-rounded mx-3 bg-info" @click="todo.modify = !todo.modify">edit</button>
                                         <button class="btn btn-sm btn-rounded" :class="todo.done ? 'bg-success' : 'bg-warning'" @click="todo.done = !todo.done">&check;</button>
                                     </div>
                                 </li>
