@@ -36,6 +36,17 @@
                                             <span @click="todo.done = !todo.done" class="cursor_pointed ms-3">
                                                 {{todo.text}}
                                             </span>
+                                            <button class="btn btn-sm btn-rounded" @click="todo.read = !todo.read">\/</button>
+                                            <div class="d_none my-3" :class="todo.read || todo.modify ? 'd-flex ' : ''">
+                                                <div v-if="!todo.modify_descr">
+                                                    {{todo.description}}
+                                                </div>
+                                                <div v-else>
+                                                    <input type="text" class="form-control large" placeholder="modifica descrizione" v-model="text_task" @keyup.enter="modify_descr(todo)">
+                                                    <button class="btn btn-sm btn-success" @click="modify_descr(todo)" >Modifica</button>
+                                                </div>
+                                                <button class="btn btn-sm btn-rounded mx-3 bg-info" @click="todo.modify_descr = !todo.modify_descr">edit</button>
+                                            </div>
                                         </div>
                                         <div v-else class="d-flex">
                                             <input type="text" class="form-control" placeholder="modifica task" v-model="text_task" @keyup.enter="modify_task(todo)">
