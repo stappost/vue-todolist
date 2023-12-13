@@ -23,6 +23,7 @@
                             <ul class="list-unstyled">
                                 <li v-for="(todo, index) in todoList" class="my-3 py-3 d-flex justify-content-between border-bottom border-black" :class="todo.done ? 'text-decoration-line-through' : ''">
                                     <div>
+                                        <button class="btn btn-sm btn-rounded btn-prymary" @click="todoList.splice(index,1)">&cross;</button>
                                         {{todo.text}}
                                     </div>
                                     <div class="buttons">
