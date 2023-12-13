@@ -35,8 +35,8 @@
                     </div>
                     <div class="col-12">
                         <div class="d-flex justify-content-center mb-5">
-                            <input type="text" class="form-control" placeholder="aggiungi nuova task" v-model="text_task">
-                            <button class="btn btn-sm btn-success" @click="add_task">Aggiungi</button>
+                            <input type="text" class="form-control" placeholder="aggiungi nuova task" v-model="text_task" @keyup.enter="add_task">
+                            <button class="btn btn-sm btn-success" @click="add_task" >Aggiungi</button>
                         </div>
                     </div>
                 </div>
