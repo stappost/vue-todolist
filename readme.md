@@ -17,7 +17,17 @@ Bonus:
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 
-
+scaffolding
+1 - aggiunta createApp da vue,
+2 - collegare vue all'html,
+3 - aggiunta div con id app,
+4 - creazione in data di array "todolist" di oggetti contenenti text e done,
+5 - creare nell' html una lista ciclando gli oggetti dell'array,
+6 - permettere di cambiare la variabile done a true,
+7 - far visualizzare il testo sbarrato quando done è true,
+8 - aggiungere pulsante per eliminazione oggetti nell'array,
+9 - aggiungere input e pulsante "aggiungi",
+10 - al click del pulsante far aggiungere il testo digitato all'array
 
 
 
