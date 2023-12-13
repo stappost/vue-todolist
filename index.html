@@ -23,11 +23,14 @@
                             <ul class="list-unstyled">
                                 <li v-for="(todo, index) in todoList" class="my-3 py-3 d-flex justify-content-between border-bottom border-black" :class="todo.done ? 'text-decoration-line-through' : ''">
                                     <div>
-                                        <button class="btn btn-sm btn-rounded btn-prymary" @click="todoList.splice(index,1)">&cross;</button>
-                                        {{todo.text}}
+                                        <button class="btn btn-sm btn-rounded bg-danger" @click="todoList.splice(index,1)">&cross;</button>
+                                        <span @click="todo.done = !todo.done" class="cursor_pointed ms-3">
+
+                                            {{todo.text}}
+                                        </span>
                                     </div>
                                     <div class="buttons">
-                                        <button class="btn btn-sm btn-rounded btn-prymary" @click="todo.done = !todo.done">&check;</button>
+                                        <button class="btn btn-sm btn-rounded" :class="todo.done ? 'bg-success' : 'bg-warning'" @click="todo.done = !todo.done">&check;</button>
                                     </div>
                                 </li>
                             </ul>

@@ -12,3 +12,7 @@ main{
     background-color: rgb(28, 28, 118);
     
 }
+
+.cursor_pointed{
+    cursor: pointer;
+}
