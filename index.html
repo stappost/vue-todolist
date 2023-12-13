@@ -20,8 +20,16 @@
                     <div class="col-12">
                         <div class="m-5 bg-light p-4">
                             <h3 class="text-center">JUST DO IT</h3>
+                            <div class="text-end">
+                                <select class="form-select-sm me-2" v-model="checked">
+                                    <option value="0">all</option>
+                                    <option value="1">checked</option>
+                                    <option value="2">unchecked</option>
+                                </select>
+                                <button class="btn btn-sm btn-success" @click="filtro">Filtra</button>
+                            </div>
                             <ul class="list-unstyled">
-                                <li v-for="(todo, index) in todoList" class="my-3 py-3 d-flex justify-content-between border-bottom border-black" :class="todo.done ? 'text-decoration-line-through' : ''">
+                                <li  v-for="(todo, index) in todoList" v-show="todo.show" class="my-3 py-3 d-flex justify-content-between border-bottom border-black" :class="todo.done ? 'text-decoration-line-through' : ''" >
                                     <div>
                                         <div v-if="!todo.modify">
                                             <button class="btn btn-sm btn-rounded bg-danger" @click="todoList.splice(index,1)">&cross;</button>
