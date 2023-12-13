@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <header>
-            <div class="text-center">
+            <div class="text-center pt-2">
                 <h1>To-Do-List</h1>
             </div>
         </header>
@@ -31,6 +31,12 @@
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex justify-content-center mb-5">
+                            <input type="text" class="form-control" placeholder="aggiungi nuova task" v-model="text_task">
+                            <button class="btn btn-sm btn-success" @click="add_task">Aggiungi</button>
                         </div>
                     </div>
                 </div>
